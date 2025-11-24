@@ -1,0 +1,221 @@
+.form-wrap {
+  /* make the form wider on larger screens while staying responsive */
+  max-width: 1100px;
+  width: 95%;
+  margin: 2rem auto;
+  text-align: left;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  /* ensure text is readable on the white background (global styles set text color to white) */
+  color: #213547;
+}
+
+@media (min-width: 1280px) {
+  .form-wrap {
+    width: 80%;
+  }
+}
+.form-wrap h2,
+.form-wrap h3,
+.form-wrap h4,
+.form-wrap h5,
+.form-wrap h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #000;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+}
+
+.form-wrap h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #000;
+  padding-bottom: 0.75rem;
+}
+
+/* Wyśrodkowany tytuł */
+.form-wrap h2 {
+  text-align: center;
+}
+
+.form-wrap h3 {
+  font-size: 1.3rem;
+}
+
+.form-wrap h4,
+.form-wrap h5,
+.form-wrap h6 {
+  font-size: 1.1rem;
+}
+
+/* Styl dla przypisów */
+.form-wrap sup {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.form-wrap .field.checkbox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-wrap .field.checkbox label {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.form-wrap .field.checkbox input[type="checkbox"] {
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.form-wrap .field.checkbox input[type="radio"] {
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* Indent submenu for delivery options and shipping address */
+.form-wrap .sharing .field.checkbox {
+  padding-left: 0;
+  margin-left: 0;
+  border-left: none;
+}
+
+.form-wrap .sharing .field.checkbox label {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 0;
+  padding: 0;
+}
+
+/* Indent only the nested delivery submenu */
+.form-wrap .sharing .field.checkbox:has(input[name="deliveryAddressOption"]) {
+  padding-left: 1.25rem;
+  margin-left: 0.25rem;
+  border-left: 3px solid rgba(0,0,0,0.06);
+}
+
+.form-wrap .sharing .field.checkbox:has(input[name="deliveryAddressOption"]) label {
+  display: block;
+  margin-left: 0;
+  padding: 0.25rem 0;
+}
+
+.form-wrap .shipping-address {
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.row .field {
+  flex: 1 1 0;
+}
+
+/* make the two columns collapse to single column on small screens */
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+/* small fixed-width inputs use inline style in JSX, but ensure they look good */
+.form-wrap input[id="house"],
+.form-wrap input[id="postal"] {
+  width: 100%;
+}
+.form-wrap .field {
+  margin-bottom: 1rem;
+}
+.form-wrap label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+.form-wrap input[type="text"],
+.form-wrap input[type="email"],
+.form-wrap input[type="date"],
+.form-wrap textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid #000;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  color: #000;
+  background: #fff;
+}
+
+/* Stilizacja ikony kalendarza dla input[type="date"] */
+.form-wrap input[type="date"] {
+  padding-right: 2.5rem;
+}
+
+.form-wrap input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  opacity: 0.6;
+  filter: invert(0.3);
+}
+
+.form-wrap input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+  background-color: #f0f0f0;
+}
+.form-wrap .checkbox label { 
+  display: inline-flex;
+  align-items: center;
+}
+.form-wrap .error {
+  color: #b00020;
+  font-size: 0.9rem;
+  margin-top: 0.35rem;
+}
+.form-wrap .actions {
+  margin-top: 1rem;
+}
+.form-wrap button {
+  background: #646cff;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.form-wrap button:hover { filter: brightness(0.95); }
+.form-wrap .submitted {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 6px;
+  background: #f7f8ff;
+  border: 1px solid #e6e9ff;
+}
+.receiver p {
+  margin: 0.2rem 0;
+  color: red;
+}
+
+.form-wrap .receiver {
+  border: 2px solid #000;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  background-color: #f9f9f9;
+}
